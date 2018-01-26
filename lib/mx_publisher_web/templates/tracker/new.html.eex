@@ -1,0 +1,5 @@
+<h2>New Tracker</h2>
+
+<%= render "form.html", Map.put(assigns, :action, tracker_path(@conn, :create)) %>
+
+<span><%= link "Back", to: tracker_path(@conn, :index) %></span>

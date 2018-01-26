@@ -1,0 +1,17 @@
+h2 Show tracker
+
+ul
+
+  li
+    strong Address:
+    = @tracker.address %>
+  li
+    strong Id:
+    = @tracker.id
+
+
+
+
+
+span = link "Edit", to: tracker_path(@conn, :edit, @tracker), class: 'btn btn-default'
+span = link "Back", to: tracker_path(@conn, :index), class: 'btn btn-default'

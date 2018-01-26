@@ -1,0 +1,24 @@
+h2 Trackers
+
+table.table
+  thead
+    tr
+      th Id
+      th Address
+      th
+
+  tbody
+    = for tracker <- @trackers do
+        tr
+          td = tracker.id
+          td = tracker.address
+
+          td.text-right
+            .btn-group
+              / = link "Show", to: user_path(@conn, :show, tracker), class: "btn btn-info btn-sm"
+              = link "Edit", to: tracker_path(@conn, :edit, tracker), class: "btn btn-default btn-sm"
+              = link "Delete", to: tracker_path(@conn, :delete, tracker), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-sm"
+
+
+
+span = link "New tracker", to: tracker_path(@conn, :new) , class: "btn btn-success"

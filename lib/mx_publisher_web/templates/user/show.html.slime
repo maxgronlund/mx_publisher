@@ -1,0 +1,19 @@
+h2 Show User
+
+ul
+
+  li
+    strong Name:
+    = @user.username %>
+  li
+    strong Id:
+    = @user.id
+  li
+    strong Password hash:
+    = @user.password_hash
+
+
+
+
+span = link "Edit", to: user_path(@conn, :edit, @user), class: 'btn btn-default'
+span = link "Back", to: user_path(@conn, :index), class: 'btn btn-default'

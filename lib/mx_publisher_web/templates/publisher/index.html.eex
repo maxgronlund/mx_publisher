@@ -1,0 +1,36 @@
+<h2>Listing Publishers</h2>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Legal name</th>
+      <th>Email</th>
+      <th>Phone number</th>
+      <th>Ipi code</th>
+      <th>Cae code</th>
+      <th>Description</th>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for publisher <- @publishers do %>
+    <tr>
+      <td><%= publisher.legal_name %></td>
+      <td><%= publisher.email %></td>
+      <td><%= publisher.phone_number %></td>
+      <td><%= publisher.ipi_code %></td>
+      <td><%= publisher.cae_code %></td>
+      <td><%= publisher.description %></td>
+
+      <td class="text-right">
+        <span><%= link "Show", to: publisher_path(@conn, :show, publisher), class: "btn btn-default btn-xs" %></span>
+        <span><%= link "Edit", to: publisher_path(@conn, :edit, publisher), class: "btn btn-default btn-xs" %></span>
+        <span><%= link "Delete", to: publisher_path(@conn, :delete, publisher), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs" %></span>
+      </td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
+
+<span><%= link "New Publisher", to: publisher_path(@conn, :new) %></span>

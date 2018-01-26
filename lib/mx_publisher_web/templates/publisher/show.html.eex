@@ -1,0 +1,38 @@
+<h2>Show Publisher</h2>
+
+<ul>
+
+  <li>
+    <strong>Legal name:</strong>
+    <%= @publisher.legal_name %>
+  </li>
+
+  <li>
+    <strong>Email:</strong>
+    <%= @publisher.email %>
+  </li>
+
+  <li>
+    <strong>Phone number:</strong>
+    <%= @publisher.phone_number %>
+  </li>
+
+  <li>
+    <strong>Ipi code:</strong>
+    <%= @publisher.ipi_code %>
+  </li>
+
+  <li>
+    <strong>Cae code:</strong>
+    <%= @publisher.cae_code %>
+  </li>
+
+  <li>
+    <strong>Description:</strong>
+    <%= @publisher.description %>
+  </li>
+
+</ul>
+
+<span><%= link "Edit", to: publisher_path(@conn, :edit, @publisher) %></span>
+<span><%= link "Back", to: publisher_path(@conn, :index) %></span>
