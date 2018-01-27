@@ -13,5 +13,6 @@ ol.breadcrumb.text-right
     'A publishing framework
     br
     'does not compromise speed and maintainability.
-
-= link "Accounts", to: user_path(@conn, :index), class: 'btn btn-primary'
+= if @current_user do
+  = link "Accounts", to: user_path(@conn, :index), class: 'btn btn-primary'
+  = link "Trackers", to: tracker_path(@conn, :index), class: 'btn btn-primary'

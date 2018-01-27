@@ -5,12 +5,14 @@ table.table
     tr
       th id
       th Name
+      th Email
       th
 
   tbody
     = for user <- @users do
         tr
           td = user.id
+          td = user.email
           td = user.username
 
           td.text-right

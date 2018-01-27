@@ -106,8 +106,8 @@ defmodule MxPublisher.Accounts do
 
   import Comeonin.Pbkdf2, only: [checkpw: 2, dummy_checkpw: 0]
 
-  def login_by_username_and_pass(conn, username, given_pass, opts) do
-    user = Repo.get_by!(User, username: username)
+  def login_by_email_and_pass(conn, email, given_pass, opts) do
+    user = Repo.get_by!(User, email: email)
     cond do
       user && checkpw(given_pass, user.password_hash) ->
         {:ok, MxPublisherWeb.Auth.login(conn, user)}
