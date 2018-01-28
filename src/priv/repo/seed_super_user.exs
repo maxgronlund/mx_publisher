@@ -1,6 +1,6 @@
 # Script for adding the first user
-alias MusicTester.Repo
-alias MusicTester.User
+alias MxPublisher.Repo
+alias MxPublisher.Accounts.User
 
 user = Repo.get_by(User, email: "admin@example.com")
 unless user do
