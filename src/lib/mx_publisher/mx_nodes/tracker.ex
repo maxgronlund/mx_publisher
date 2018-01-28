@@ -10,6 +10,9 @@ defmodule MxPublisher.MxNodes.Tracker do
     field :api_key, :string
     field :certificate, :string
     field :user_id, :id
+    field :trust, :float
+    field :last_seen, :naive_datetime
+    field :last_requested, :naive_datetime
 
     timestamps()
   end
@@ -17,7 +20,7 @@ defmodule MxPublisher.MxNodes.Tracker do
   @doc false
   def changeset(%Tracker{} = tracker, attrs) do
     tracker
-    |> cast(attrs, [:address, :certificate, :api_key])
-    |> validate_required([:address, :certificate, :api_key])
+    |> cast(attrs, [:address, :certificate, :api_key, :trust, :last_seen, :last_requested])
+    |> validate_required([:address, :certificate, :api_key, :trust, :last_seen, :last_requested])
   end
 end

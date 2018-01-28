@@ -7,7 +7,7 @@
 
   <div class="form-group">
     <%= label f, :address, class: "control-label" %>
-    <%= text_input f, :address, class: "form-control" %>
+    <%= url_input f, :address, class: "form-control" %>
     <%= error_tag f, :address %>
   </div>
 
@@ -21,6 +21,24 @@
     <%= label f, :certificate, class: "control-label" %>
     <%= text_input f, :certificate, class: "form-control" %>
     <%= error_tag f, :certificate %>
+  </div>
+
+  <div class="form-group">
+    <%= label f, :trust, class: "control-label" %>
+    <%= text_input f, :trust, class: "form-control" %>
+    <%= error_tag f, :trust %>
+  </div>
+
+  <div class="form-group">
+    <%= label f, :last_seen, class: "control-label" %>
+    <%= datetime_select f, :last_seen, class: "form-control" %>
+    <%= error_tag f, :last_seen %>
+  </div>
+
+  <div class="form-group">
+    <%= label f, :last_requested, class: "control-label" %>
+    <%= datetime_select f, :last_requested, class: "form-control" %>
+    <%= error_tag f, :last_requested %>
   </div>
 
   <div class="form-group">

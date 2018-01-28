@@ -26,7 +26,7 @@ defmodule MxPublisher.MxNetwork.SuperNode do
 
   defp fetch_json(query_str) do
     {:ok, {_, _, body}} = :httpc.request(
-      String.to_char_list("http://localhost:4000/api/mx_trackers")
+      String.to_char_list("http://localhost:4001/api/mx_trackers")
     )
       # String.to_char_list("http://api.wolframalpha.com/v2/query" <>
       #   "?appid=#{app_id()}" <>
