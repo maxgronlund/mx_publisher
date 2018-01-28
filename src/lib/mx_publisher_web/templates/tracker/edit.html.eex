@@ -1,5 +1,5 @@
-<h2>Edit User</h2>
+<h2>Edit Tracker</h2>
 
-<%= render "form.html", Map.put(assigns, :action, user_path(@conn, :update, @user)) %>
+<%= render "form.html", Map.put(assigns, :action, tracker_path(@conn, :update, @tracker)) %>
 
-<span><%= link "Back", to: user_path(@conn, :index) %></span>
+<span><%= link "Back", to: tracker_path(@conn, :index) %></span>

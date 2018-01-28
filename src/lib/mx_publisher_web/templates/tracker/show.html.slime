@@ -4,7 +4,7 @@ ul
 
   li
     strong Address:
-    = @tracker.address %>
+    = @tracker.address
   li
     strong Id:
     = @tracker.id
