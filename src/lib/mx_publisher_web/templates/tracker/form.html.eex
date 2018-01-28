@@ -30,6 +30,12 @@
   </div>
 
   <div class="form-group">
+    <%= label f, :distance, class: "control-label" %>
+    <%= text_input f, :distance, class: "form-control" %>
+    <%= error_tag f, :distance %>
+  </div>
+
+  <div class="form-group">
     <%= label f, :last_seen, class: "control-label" %>
     <%= datetime_select f, :last_seen, class: "form-control" %>
     <%= error_tag f, :last_seen %>

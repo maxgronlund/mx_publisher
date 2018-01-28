@@ -9,7 +9,6 @@ defmodule MxPublisherWeb.Auth do
   end
 
   def call(conn, repo) do
-    Apex.ap(session_id)
     user_id = get_session(conn, session_id)
     user    = user_id && Accounts.get_user!(user_id)
     assign(conn, :current_user, user)

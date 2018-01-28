@@ -1,1 +1,1 @@
-MxPublisher.MxNetwork.compute("what is elixir?")
+MxPublisher.MxNetwork.compute("http://localhost:4001/api/mx_trackers", %{backend: "MxPublisher.MxNetwork.SuperNode"})

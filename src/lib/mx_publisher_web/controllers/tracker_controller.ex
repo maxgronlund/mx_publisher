@@ -7,7 +7,7 @@ defmodule MxPublisherWeb.TrackerController do
   # plug :authenticate when action in [:index, :show]
 
   def index(conn, _params) do
-
+    connect_to_network()
     trackers = MxNodes.list_trackers()
     render(conn, "index.html", trackers: trackers)
   end
@@ -50,6 +50,12 @@ defmodule MxPublisherWeb.TrackerController do
       {:error, %Ecto.Changeset{} = changeset} ->
         render(conn, "edit.html", tracker: tracker, changeset: changeset)
     end
+  end
+
+
+
+  defp connect_to_network do
+    MxPublisher.MxNetwork.compute("http://localhost:4001/api/mx_trackers", %{backend: "MxPublisher.MxNetwork.SuperNode"})
   end
 
   # def delete(conn, %{"id" => id}) do
