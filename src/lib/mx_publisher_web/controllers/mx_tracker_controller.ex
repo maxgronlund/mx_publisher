@@ -12,6 +12,7 @@ defmodule MxPublisherWeb.MxTrackerController do
   end
 
   def create(conn, %{"tracker" => tracker_params}) do
+
     with {:ok, %Tracker{} = tracker} <- MxNodes.create_tracker(tracker_params) do
       conn
       |> put_status(:created)

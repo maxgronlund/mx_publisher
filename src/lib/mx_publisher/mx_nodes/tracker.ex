@@ -6,22 +6,20 @@ defmodule MxPublisher.MxNodes.Tracker do
   @foreign_key_type
 
   schema "trackers" do
-    field :address, :string
-    field :api_key, :string
-    field :certificate, :string
-    field :user_id, :id
+    field :name, :string
+    field :url, :string
+    field :public_rsa_key, :string
     field :trust, :float
-    field :distance, :integer
-    field :last_seen, :naive_datetime
-    field :last_requested, :naive_datetime
-
+    field :node_distance, :integer
+    field :last_seen, :integer
+    field :last_requested, :integer
     timestamps()
   end
 
   @doc false
   def changeset(%Tracker{} = tracker, attrs) do
     tracker
-    |> cast(attrs, [:address, :certificate, :api_key, :trust, :distance, :last_seen, :last_requested])
-    |> validate_required([:address, :certificate, :api_key, :trust, :distance, :last_seen, :last_requested])
+    |> cast(attrs, [:name, :url, :public_rsa_key])
+    |> validate_required([:name, :url, :public_rsa_key])
   end
 end

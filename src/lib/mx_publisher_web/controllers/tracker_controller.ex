@@ -7,6 +7,7 @@ defmodule MxPublisherWeb.TrackerController do
   # plug :authenticate when action in [:index, :show]
 
   def index(conn, _params) do
+    # Apex.ap(conn.assigns.current_user.id)
     connect_to_network()
     trackers = MxNodes.list_trackers()
     render(conn, "index.html", trackers: trackers)
@@ -55,7 +56,8 @@ defmodule MxPublisherWeb.TrackerController do
 
 
   defp connect_to_network do
-    MxPublisher.MxNetwork.compute("http://localhost:4000/api/mx_trackers", %{backend: "MxPublisher.MxNetwork.SuperNode"})
+    trackers = MxNodes.list_trackers()
+    MxPublisher.MxNetwork.compute(trackers, %{backend: "MxPublisher.MxNetwork.SuperNode"})
   end
 
   # def delete(conn, %{"id" => id}) do

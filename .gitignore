@@ -25,3 +25,4 @@ src//assets/node_modules
 # secrets files as long as you replace their contents by environment
 # variables.
 /src/config/*.secret.exs
+/src/config/*.pem

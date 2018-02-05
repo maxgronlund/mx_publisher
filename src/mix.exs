@@ -45,7 +45,9 @@ defmodule MxPublisher.Mixfile do
       {:pbkdf2_elixir, "~> 0.12"},
       {:phoenix_slime, "~> 0.8.0"},
       {:apex, "~>1.2.0"},
-      {:sweet_xml, "~> 0.5.0"}
+      {:sweet_xml, "~> 0.5.0"},
+      {:ex_crypto, "~> 0.7.1"},
+      {:rsa_ex, "~> 0.1"}
     ]
   end
 

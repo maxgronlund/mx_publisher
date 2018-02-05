@@ -12,12 +12,9 @@ defmodule MxPublisherWeb.MxTrackerView do
 
   def render("mx_tracker.json", %{mx_tracker: mx_tracker}) do
     %{id: mx_tracker.id,
-      address: mx_tracker.address,
-      certificate: mx_tracker.certificate,
-      api_key: mx_tracker.api_key,
+      address: mx_tracker.url,
       trust: mx_tracker.trust,
-      distance: mx_tracker.distance,
-      user_id: mx_tracker.user_id,
+      node_distance: mx_tracker.node_distance,
       last_seen: mx_tracker.last_seen,
       last_requested: mx_tracker.last_requested
     }

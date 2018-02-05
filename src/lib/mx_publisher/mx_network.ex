@@ -9,12 +9,18 @@ defmodule MxPublisher.MxNetwork do
     backend.start_link(query, query_ref, owner, limit)
   end
 
-  def compute(tracker_url, opts \\ []) do
+  def compute(trackers, opts \\ []) do
+    for tracker <- trackers do
+      fetch_tracker(tracker.url, opts)
+    end
+
+  end
+
+  def fetch_tracker(address, opts \\ []) do
     limit = opts[:limit] || 10
     backends = opts[:backends] || @backends
-
     backends
-    |> Enum.map(&spawn_query(&1, tracker_url, limit))
+    |> Enum.map(&spawn_query(&1, address, limit))
     |> await_results(opts)
     |> print_result(opts)
   end

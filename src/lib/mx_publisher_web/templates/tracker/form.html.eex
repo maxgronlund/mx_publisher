@@ -6,45 +6,21 @@
   <% end %>
 
   <div class="form-group">
-    <%= label f, :address, class: "control-label" %>
-    <%= url_input f, :address, class: "form-control" %>
-    <%= error_tag f, :address %>
+    <%= label f, :name, class: "control-label" %>
+    <%= text_input f, :name, class: "form-control" %>
+    <%= error_tag f, :name %>
   </div>
 
   <div class="form-group">
-    <%= label f, :api_key, class: "control-label" %>
-    <%= text_input f, :api_key, class: "form-control" %>
-    <%= error_tag f, :api_key %>
+    <%= label f, :url, class: "control-label" %>
+    <%= url_input f, :url, class: "form-control" %>
+    <%= error_tag f, :url %>
   </div>
 
   <div class="form-group">
-    <%= label f, :certificate, class: "control-label" %>
-    <%= text_input f, :certificate, class: "form-control" %>
-    <%= error_tag f, :certificate %>
-  </div>
-
-  <div class="form-group">
-    <%= label f, :trust, class: "control-label" %>
-    <%= text_input f, :trust, class: "form-control" %>
-    <%= error_tag f, :trust %>
-  </div>
-
-  <div class="form-group">
-    <%= label f, :distance, class: "control-label" %>
-    <%= text_input f, :distance, class: "form-control" %>
-    <%= error_tag f, :distance %>
-  </div>
-
-  <div class="form-group">
-    <%= label f, :last_seen, class: "control-label" %>
-    <%= datetime_select f, :last_seen, class: "form-control" %>
-    <%= error_tag f, :last_seen %>
-  </div>
-
-  <div class="form-group">
-    <%= label f, :last_requested, class: "control-label" %>
-    <%= datetime_select f, :last_requested, class: "form-control" %>
-    <%= error_tag f, :last_requested %>
+    <%= label f, :public_rsa_key, class: "control-label" %>
+    <%= textarea f, :public_rsa_key, class: "form-control" %>
+    <%= error_tag f, :public_rsa_key %>
   </div>
 
   <div class="form-group">

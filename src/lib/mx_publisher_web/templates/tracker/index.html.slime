@@ -11,7 +11,7 @@ table.table
     = for tracker <- @trackers do
         tr
           td = tracker.id
-          td = tracker.address
+          td = tracker.url
 
           td.text-right
             .btn-group

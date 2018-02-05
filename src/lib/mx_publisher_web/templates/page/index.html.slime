@@ -16,3 +16,5 @@ ol.breadcrumb.text-right
 = if @current_user do
   = link "Accounts", to: user_path(@conn, :index), class: 'btn btn-primary'
   = link "Trackers", to: tracker_path(@conn, :index), class: 'btn btn-primary'
+
+= @public_key
